@@ -1,0 +1,38 @@
+CREATE TABLE vouchers (
+Id int AUTO_INCREMENT,
+Date DATE NOT NULL,
+Voucher_No varchar (255)  NOT NULL,
+Time TIME NOT NULL,
+Chk_No  varchar (255),
+Recipt_No  varchar (255),
+PRIMARY KEY (id));
+
+
+
+CREATE TABLE credits (
+Id int  AUTO_INCREMENT,
+Account_Name varchar(30) NOT NULL,
+Amount int NOT NULL,
+Voucher_Id int NOT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY (Voucher_Id) REFERENCES vouchers (id));
+
+CREATE TABLE debits (
+Id int  AUTO_INCREMENT,
+Account_Name varchar(30) NOT NULL,
+Amount int NOT NULL,
+Voucher_Id int NOT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY (Voucher_Id) REFERENCES vouchers (id));
+
+
+CREATE TABLE IF NOT EXISTS users (
+Id int  AUTO_INCREMENT,
+User_Name varchar(30) NOT NULL,
+User_Role varchar(30) NOT NULL,
+Password varchar NOT NULL,
+User_Position int ,
+PRIMARY KEY (id));
+
+
+
