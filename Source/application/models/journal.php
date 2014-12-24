@@ -3,6 +3,8 @@
 class Journal extends CI_Model
 {
 
+	
+
 	function show_debit_entry($num=20, $start=0)
 	{
 		$this->db->select()->order_by('id', 'desc')->limit($num, $start); 

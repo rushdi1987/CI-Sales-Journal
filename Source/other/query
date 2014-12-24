@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS users (
 Id int  AUTO_INCREMENT,
 User_Name varchar(30) NOT NULL,
 User_Role varchar(30) NOT NULL,
-Password varchar NOT NULL,
+Password varchar (256) NOT NULL,
 User_Position int ,
 PRIMARY KEY (id));
 

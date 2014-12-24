@@ -32,26 +32,58 @@
 				</div>
 			</div>
 			
-				<button type="submit" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center btn btn-info">Submit</button>
+				<button type="submit" id="submit" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center btn btn-info">Submit</button>
 		</form>
 	</div>
 	<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 bs-callout bs-callout-info">
 		<h4 class="text-center">Recent Journal Entries</h4>
 		<?php
-			if (empty($transection)) {
+			if (!isset($transection)) {				
 		?>
 			<p>There is no entry at this moment.</p>
 			
 		<?php
 			}else{
-				foreach ($transection as $row) {		
 		?>
-			<h4><?= $row['Account_Name'] ;?></h4><hr>	
-		<?php 
+		<div class="row">
+			<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+				<p>Account Name</p>
+
+			</div>
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				<p>Dr / Cr</p>
+			</div>
+			<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+				<p class="text-right">Amount (Tk)</p>
+			</div>
+			<hr>
+		</div>
+		<?php
+				$k = sizeof($transection['Debit_acc_name']);
+
+				for ($i=0; $i < ($k) ; $i++) { 
+		?>
+		<br><div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><p>
+		<?php			
+					print_r($transection['Debit_acc_name'][$i]['Account_Name']
+						.'</p><p>&nbsp;&nbsp;&nbsp;'.
+						$transection['Credit_acc_name'][$i]['Account_Name']
+						.'</p></div><div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><p>Dr</br>Cr</p></div><div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"><p class="text-right">'.
+
+						$transection['Debit_acc_name'][$i]['Amount']
+						.'&nbsp;&nbsp;&nbsp;</p><p class="text-right">'.
+						$transection['Credit_acc_name'][$i]['Amount']
+						.'</p></div> '
+						);
 				}
 			}
-		?>	
+		?>
 	</div>
 </div>
 
 </div>
+<script type="text/javascript">
+	$('#submit').onhover(function(){
+		alert('clicked');
+	});
+</script>

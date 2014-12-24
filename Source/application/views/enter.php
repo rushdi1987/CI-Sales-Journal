@@ -4,9 +4,9 @@
 	<?php if($error == 1){ ?>
 		<h2 class="text-center">You've entered wrong data.</h2>
 	<?php }else{?>
-	<h2 class="center">Welcome to Codeigniter Journal application.</h2>
+	<h2 class="text-center">Welcome to Codeigniter Journal application.</h2>
 	<?php } ?>
-		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-md-offset-3 col-lg-offset-3">
 			
 			<form action="<?=base_url();?>users/login" method="post" class="form">
 			<div class="form-group">
