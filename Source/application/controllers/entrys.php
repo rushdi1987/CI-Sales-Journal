@@ -7,7 +7,7 @@ class Entrys extends CI_Controller {
 	function __construct(){
 			parent::__construct();
 			$this->load->model('journal');
-			$this->load->library('javascript/jquery');
+			//$this->load->library('javascript/jquery');
 		}
 
 

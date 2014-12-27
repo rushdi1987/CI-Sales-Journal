@@ -1,0 +1,4 @@
+1. make a database in your server . Named "cijournal"
+2. Import the  sql  file  from database folder
+3.Copy files from source folder into your  www root folder in a folder  name it 'ciapp'.
+4. username 'admin' password 'admin'

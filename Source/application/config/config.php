@@ -377,6 +377,8 @@ $config['css'] = 'assets/bootstrap_3.1.1/css/bootstrap.css';
 |
 */
 $config['js'] = 'assets/bootstrap_3.1.1/js/bootstrap.js';
+$config['javascript_location'] = 'http://localhost/site/ci-journal/assets/jquery-2.1.3.min.js';
+//$config['javascript_ajax_img'] = 'images/ajax-loader.gif';
 
 
 /* End of file config.php */
